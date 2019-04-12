@@ -1,56 +1,93 @@
 % Copyright (c) 2019 Bochen Tan
 % Public domain.
+%本模板的宗旨是尽量绿色，不需要附加安装任何东西。
+%按照教务部下发的WORD说明文档格式，下简称“说明”
+%没有封面和评阅表，这两部分请直接在Cover&ReviewTable.doc中写在输出pdf拼到一起
+%doc小改动：封面校徽和文字替换为了高清版本，“题目：”和中文题目对齐，中英文题目分在了表的两行
+%doc小改动：插入了两个白页，使得连续打印的时候封面和表格都在奇数页
+%正文部分改动：在每一页下方中央加了页码，因为说明中页眉部分奇偶页，所以页码就都在中央吧
+%不含自动的参考文献，说明中参考文献格式不典型，请手动输入或自行写程序
+%在Windows或Linux下渲染出字体更接近说明，Mac OS上字体不太一样
+%有警告\headheight is too small，fancyhdr的上距离有点小，似乎问题不大
+
 \documentclass[UTF8,openany,AutoFakeBold,AutoFakeSlant,cs4size]{ctexbook}
-\usepackage{graphicx}
+%openany 使一章可以从偶数页开始，因为说明中每一章并没有只能从奇数页开始，虽然这是常理
+%AutoFakeBold 和 AutoFakeSlant 因为 CJK 里没有真正的加粗和倾斜，如果额外字体则效果更好
+%cs4size 因为要求主题是小四号字
+
 \usepackage[a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm]{geometry}
+%office中正常页边距
+
+
+
 \usepackage{amsmath}
-\usepackage{multirow,booktabs,makecell}
-\usepackage{graphicx}
-\usepackage[font=small,labelsep=space]{caption}
-\renewcommand{\thetable}{\arabic{table}}
-\renewcommand{\thefigure}{\arabic{table}}
 \usepackage{bm}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
 \usepackage{amsfonts}
 \usepackage{cite}
 \usepackage{enumerate}
+\usepackage{fancyhdr}
 
-\usepackage{tocloft}
-\setlength\cftparskip{10pt}
-\renewcommand\cftchapfont{\heiti\zihao{2}}
-\renewcommand\cftchapdotsep{\cftdotsep}
+
+
+\usepackage{multirow,booktabs,makecell}
+\usepackage{graphicx}
+\usepackage[font=small,labelsep=space]{caption} %五号，宋体/Time new roman
+\renewcommand{\thetable}{\arabic{table}} %表格和图片编号不分章节，直接1，2，3 ...
+\renewcommand{\thefigure}{\arabic{table}}
+
+
+
+\usepackage{tocloft} %自定义目录，说明中的目录没有按照字面写的设置，这里按字面写的为准
+
+\setlength\cftparskip{10pt} %目录项之间垂直距离，不确定，待改
+
+\renewcommand\cftchapfont{\heiti\zihao{2}} %二号，黑体
+\renewcommand\cftchapdotsep{\cftdotsep} %有点连到页码，点间距不确定，待改
 \renewcommand\cftchappagefont{\bfseries\songti\zihao{2}}
+%页码的文字用加粗宋体，因为\heiti下英文，数字和标点并没有被加粗，与WORD不同
+
+%1. 第一级 三号宋体/Time new roman、加粗
 \renewcommand\cftsecfont{\bfseries\songti\zihao{3}}
 \renewcommand\cftsecpagefont{\bfseries\songti\zihao{3}}
+
+%1.1 第二级 四号，宋体/Time new roman，加粗，页码一致
 \renewcommand\cftsubsecfont{\bfseries\songti\zihao{4}}
 \renewcommand\cftsubsecpagefont{\bfseries\songti\zihao{4}}
+
+%1.1.1 第三级 小四，宋体/Time new roman加粗，页码一致
 \renewcommand\cftsubsubsecfont{\bfseries\songti\zihao{-4}}
 \renewcommand\cftsubsubsecpagefont{\bfseries\songti\zihao{-4}}
 
-\CTEXsetup[format={\center\heiti\zihao{2}},beforeskip=0pt]{chapter}
 
-\renewcommand\thesection{\arabic{section}}
+
+\usepackage{titlesec}%自定义章节标题
+\CTEXsetup[format={\center\heiti\zihao{2}},beforeskip=0pt]{chapter}
+%第一章  绪论（二号、黑体） beforeskip为上方垂直距离看起来还比说明偏大，待改
+
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
+%使目录中有三级标题，即subsubsection
 
+\renewcommand\thesection{\arabic{section}} % 使得不显示章名，只显示节名
 \titleformat{\section}
 {\raggedright\zihao{3}\bfseries\songti}
 {\thesection.\quad}
 {0pt}
-{}
+{}%1. 第一级（三号、宋体/Time new roman、加粗）
 
 \titleformat{\subsection}
 {\raggedright\bfseries\zihao{4}\songti}
 {\thesubsection\quad}
 {0pt}
-{}
+{}%1.1 第二级（四号，宋体/Time new roman，加粗）
 
 \titleformat{\subsubsection}
 {\raggedright\bfseries\zihao{-4}\songti}
 {\thesubsubsection\quad}
 {0pt}
-{}
+{}%1.1.1 第三级（小四，宋体/Time new roman，加粗）
+
+
 
 
 
@@ -59,54 +96,84 @@
 \date{}
 \begin{document}
 
+
+
+
+
 \chapter*{版权声明}
 \setcounter{page}{0}
+% 本页不计页码
 \thispagestyle{empty}
+% 本页无页眉和页脚
 任何收存和保管本论文各种版本的单位和个人，未经本论文作者同意，不得将本论文转借他人，亦不得随意复制、抄录、拍照或以任何方式传播。否则，引起有碍作者著作权之问题，将可能承担法律责任。
 \clearpage
+
+%版权声明后空白一页，使得摘要从奇数页开始。
 \quad
 \setcounter{page}{0}
+% 本页不计页码
 \thispagestyle{empty}
+% 本页无页眉和页脚
 \clearpage
 
 
 
 \pagestyle{fancy}
-\chapter*{摘要}
+\normalsize
 \linespread{1.5}
-
+%小四号，宋体/Time new roman，1.5倍行距
+\chapter*{摘要}
 
 \bigskip
 \noindent{\bfseries\songti 关键词: } 
-\addcontentsline{toc}{chapter}{摘要}
-\fancypagestyle{plain}
+
+
+
+\addcontentsline{toc}{chapter}{摘要} %手动加入目录
+\fancypagestyle{plain} %因为latex默认每章第一页是plain所以需要重置一下plain和说明统一
 {
-	\fancyhf{}
+	\fancyhf{} %清空
+	
 	\fancyhead[RE,RO]{摘要}
+	%偶数页右页眉，奇数页右页眉均为“摘要”，及章名\leftmark
+
 	\fancyhead[LE,LO]{北京大学本科生毕业论文}
+	%偶数页左页眉，奇数页左页眉均为“北京大学本科生毕业论文”
+	
 	\fancyfoot[CO,CE]{~\thepage~}
-	\renewcommand{\headrulewidth}{0.7pt}
-	\renewcommand{\footrulewidth}{0pt}
+	%偶数页和奇数页中页脚为页码，从对称考虑，因为每页在说明中都是一样的，不分奇偶
+	
+	\renewcommand{\headrulewidth}{0.7pt} %页眉线宽度，可调，不太清楚说明中是多少，待改
+	
+	\renewcommand{\footrulewidth}{0pt} %页脚线宽度为0，既没有
 }
+
+%默认的风格是fancy，设置于下，用于每章非第一页
 \fancyhf{}
 \fancyhead[RE,RO]{摘要}
 \fancyhead[LE,LO]{北京大学本科生毕业论文}
 \fancyfoot[CO,CE]{~\thepage~}
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0pt}
+\clearpage
 
 
 
 
 
 
-\newpage
 \small
+\linespread{1.5}
+%5号，Time new roman，1.5倍行距
 \chapter*{\bfseries Abstract}
-	\bigskip
-	\noindent
-	{\bfseries Key Words: }
-\addcontentsline{toc}{chapter}{\bfseries Abstract}
+
+\bigskip
+\noindent
+{\bfseries Key Words: }
+
+
+	
+\addcontentsline{toc}{chapter}{\bfseries Abstract} %Abstract加粗
 \fancypagestyle{plain}
 {
 	\fancyhf{}
@@ -122,13 +189,12 @@
 \fancyfoot[CO,CE]{~\thepage~}
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0pt}
+\clearpage
 
 
 
 
 
-
-\newpage
 \fancypagestyle{plain}
 {
 	\fancyhf{}
@@ -147,14 +213,15 @@
 \renewcommand{\contentsname}{\centerline{全文目录}}
 \tableofcontents
 \addcontentsline{toc}{chapter}{全文目录}
+\clearpage
 
 
 
 
 
-
-\newpage
 \normalsize
+\linespread{1.5}
+%正文，小四号，中文宋体，英文Time new roman，1.5倍行距
 \fancypagestyle{plain}
 {
 	\fancyhf{}
@@ -172,20 +239,20 @@
 \renewcommand{\footrulewidth}{0pt}
 
 
+
 \chapter{章节名称}
 \section{一级段落名称}
 \subsection{二级段落名称}
 \subsubsection{三级段落名称}
 引用如\cite{PhysRev.47.777}，引用表如表\ref{tab:input_output_r}，引用图如图\ref{fig:sample}．
 
-
 \begin{table}[h]
-\small
+\small %内容，（五号，宋体/Time new roman）
 \centering
 \caption{不同频率下的输入和输出阻抗}
 \label{tab:input_output_r}
-\begin{tabular}{cccc}
-\toprule
+\begin{tabular}{cccc} %表格使用三线表
+\toprule %不确定说明中三条线的粗细，待改
 频率(Hz) & 1 & 10k & 1M \\
 \midrule
 输入电阻($\Omega/^\circ$) & 339.719k/-87.84 & 5.6707k/-9.827 & 351.188/-72.377\\
@@ -194,23 +261,21 @@
 \end{tabular}
 \end{table}
 
-
-
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=12cm]{sample.jpg}
 \caption{示例图片}
 \label{fig:sample}
 \end{figure}
+\clearpage
 
 
 
 
 
-\newpage
 \small
-\linespread{1}	
+\linespread{1}
+%正文，五号，中文宋体，英文Time new roman，1倍行距
 \chapter*{参考文献}
 \noindent
 \begin{enumerate}[{[1]}]
@@ -218,10 +283,6 @@
 	\item 期刊
 	\item 网络文档
 \end{enumerate}
-
-
-说明：参考文献自己打出来，因为给的格式不常规
-
 
 1.	期刊  作者. 论文名. 刊名, 出版年份, 卷号(期号): 起始-截止页
 
@@ -253,14 +314,48 @@
 \fancyfoot[CO,CE]{~\thepage~}
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0pt}
+
+
+
+
+
+
 \bibliographystyle{plain}
 \bibliography{ref}
+这是参考“参考文献”，主要用来看引用的顺序，请手动些参考文献或自行写程序，最终编译请删除
+\clearpage
 
 
-\newpage
-\chapter*{本科期间的主要工作和成果}
-\normalsize
+
+
+
 \linespread{1}
+\normalsize
+%小四号，中文宋体，英文Time new roman，1倍行距
+\chapter*{本科期间的主要工作和成果}
+
+\noindent 本科期间参加的主要科研项目
+
+\noindent 本研基金
+\begin{enumerate}
+	\item 基金名称. 基金类型. 指导老师. 基金支持年限
+\end{enumerate}
+
+\noindent 各种科研项目
+\begin{enumerate}
+	\item 项目名称. 项目类型
+\end{enumerate}
+
+格式下
+期刊：
+全部作者. 论文名. 期刊名, 出版年份, 卷号(期号): 起始-截止页
+会议论文：
+全部作者. 论文名. 会议名, 会议举办地, 会议举办时间, 起始-截止页
+专利
+全部专利申请人. 专利名称. 专利申请号. 专利申请日期. 国别
+
+
+
 \addcontentsline{toc}{chapter}{本科期间的主要工作和成果}
 \fancypagestyle{plain}
 {
@@ -277,13 +372,19 @@
 \fancyfoot[CO,CE]{~\thepage~}
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0pt}
+\clearpage
 
 
 
 
-\newpage	
-\chapter*{致谢}
+
 \linespread{1.5}
+\normalsize
+%正文，小四号，中文宋体，英文Time new roman，1.5倍行距
+\chapter*{致谢}
+
+
+
 \addcontentsline{toc}{chapter}{致谢}
 \fancypagestyle{plain}
 {
@@ -300,6 +401,9 @@
 \fancyfoot[CO,CE]{~\thepage~}
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0pt}
+
+
+
 
 
 \end{document}
