@@ -1,4 +1,4 @@
-\documentclass[utf8, a4paper, 10.5pt]{book}
+\documentclass[utf8, a4paper, 12pt]{book}
 \newcommand\clearemptydoublepage{\clearpage{\thispagestyle{empty}\cleardoublepage}}
 \usepackage{pdfpages}
 
@@ -44,7 +44,9 @@
 
 \usepackage{multirow,booktabs,makecell}
 \usepackage{graphicx}
-\usepackage[labelsep=space]{caption} %五号，宋体/Time new roman
+\usepackage{caption}
+\DeclareCaptionFont{pkueecs}{\songti\fontsize{10.5pt}{15.75pt}}%五号，宋体/Time new roman
+\captionsetup{font=pkueecs, labelsep=space}
 \captionsetup[figure]{name=图}
 \captionsetup[table]{name=表}
 \renewcommand{\thetable}{\arabic{table}} %表格和图片编号不分章节，直接1，2，3 ...
@@ -89,7 +91,7 @@
 
 
 \usepackage[titles]{tocloft} %自定义目录
-%\renewcommand\cftsecaftersnum{.} %一级目录号后加点
+\renewcommand\cftsecaftersnum{.} %一级目录号后加点
 \renewcommand\contentsname{全文目录}
 \renewcommand\cftchapnumwidth{4em}
 \renewcommand\cftchapfont{\heiti}
@@ -111,7 +113,7 @@
 
 \setcounter{page}{1}
 \pagenumbering{Roman}
-\songti\fontsize{12pt}{18pt} %小四号，宋体/Time new roman，1.5倍行距
+\songti\fontsize{12pt}{18pt}\selectfont %小四号，宋体/Time new roman，1.5倍行距
 
 \bigskip
 \noindent{\bfseries\songti 关键词: } 
@@ -151,7 +153,7 @@
 
 
 \chapter*{\bfseries Abstract}
-\fontsize{10.5pt}{15.75pt} %5号，Time new roman，1.5倍行距
+\fontsize{10.5pt}{15.75pt}\selectfont %5号，Time new roman，1.5倍行距
 \bigskip
 \noindent
 {\bfseries Key Words: }
@@ -245,11 +247,13 @@
 \section{一级段落名称}
 \subsection{二级段落名称}
 \subsubsection{三级段落名称}
+\fontsize{12pt}{18pt}\selectfont
+引用文献如\upcite{PhysRev.47.777}，引用表如表\ref{tab:input_output_r}，引用图如图\ref{fig:sample}。
 
-引用如\upcite{PhysRev.47.777}，引用表如表\ref{tab:input_output_r}，引用图如图\ref{fig:sample}．
+
 
 \begin{table}[h]
-\normalsize
+\songti\fontsize{10.5pt}{15.75pt}\selectfont
 \centering
 \caption{不同频率下的输入和输出阻抗}
 \label{tab:input_output_r}
@@ -261,13 +265,16 @@
 输出电阻($\Omega/^\circ$) & 338.638k/-89.663 & 1.9866k/-1.1228 & 1.9189k/-14.801 \\
 \bottomrule
 \end{tabular}
+\songti\fontsize{12pt}{18pt}\selectfont
 \end{table}
 
 \begin{figure}[h]
+\songti\fontsize{10.5pt}{15.75pt}\selectfont
 \centering
 \includegraphics[width=12cm]{sample.jpg}
 \caption{示例图片}
 \label{fig:sample}
+\songti\fontsize{12pt}{18pt}\selectfont
 \end{figure}
 \clearemptydoublepage
 
@@ -276,7 +283,7 @@
 
 \chapter*{参考文献}
 \begin{enumerate}[{[1]}]
-\songti\fontsize{10.5pt}{10.5pt} %正文，五号，中文宋体，英文Time new roman，1倍行距
+\songti\fontsize{10.5pt}{10.5pt}\selectfont %正文，五号，中文宋体，英文Time new roman，1倍行距
 	\item 期刊
 	\item 网络文档
 \end{enumerate}
@@ -326,7 +333,7 @@
 
 
 \chapter*{本科期间的主要工作和成果}
-\songti\fontsize{12pt}{12pt} %小四号，中文宋体，英文Time new roman，1倍行距
+\songti\fontsize{12pt}{12pt}\selectfont %小四号，中文宋体，英文Time new roman，1倍行距
 
 本科期间参加的主要科研项目
 
@@ -378,7 +385,7 @@
 
 
 \chapter*{致谢}
-\songti\fontsize{12pt}{18pt} %正文，小四号，中文宋体，英文Time new roman，1.5倍行距
+\songti\fontsize{12pt}{18pt}\selectfont %正文，小四号，中文宋体，英文Time new roman，1.5倍行距
 
 
 \addcontentsline{toc}{chapter}{致谢}
