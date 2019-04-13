@@ -1,0 +1,55 @@
+% 声明需要的Coffin
+\NewCoffin \result
+\NewCoffin \topBox
+\NewCoffin \badge
+\NewCoffin \pku
+\NewCoffin \headingText
+\NewCoffin \titleText
+\NewCoffin \chineseTitleText
+\NewCoffin \englishTitleText
+\NewCoffin \nameText
+\NewCoffin \studentIDText
+\NewCoffin \schoolText
+\NewCoffin \majorText
+\NewCoffin \advisorText
+\NewCoffin \dateText
+
+
+% 各个Coffin的内容
+\SetHorizontalCoffin \result {}
+\SetHorizontalCoffin \topBox {\color{white} \rule{210mm}{41mm}}
+\SetHorizontalCoffin \badge {\includegraphics[width=20.6mm]{images/badge}}
+\SetHorizontalCoffin \pku {\includegraphics[width=60.5mm]{images/pku}}
+\SetVerticalCoffin \headingText{160mm}{\center\heiti\fontsize{36}{36}\textcolor{black}{本科生毕业论文}}
+\SetVerticalCoffin \titleText{25.4mm}{\bfseries\songti\zihao{3}{题目：}}
+\SetVerticalCoffin \chineseTitleText{110mm}{\bfseries\kaiti\fontsize{22}{22}\underline{\makebox[112mm][l]{\chineseTitle}}}
+\SetVerticalCoffin \englishTitleText{110mm}{\bfseries\kaiti\zihao{3}\underline{\makebox[112mm][l]{\englishTitle}}}
+\SetVerticalCoffin \nameText{104mm}{\center\songti\fontsize{16}{16}\textcolor{black}{姓\qquad\ \ \ 名：\underline{\makebox[76mm][c]{\kaiti{\name}}}}}
+\SetVerticalCoffin \studentIDText{104mm}{\center\songti\fontsize{16}{16}\textcolor{black}{学\qquad\ \ \ 号：\underline{\makebox[76mm][c]{\kaiti\zihao{3}{\studentID}}}}}
+\SetVerticalCoffin \schoolText{104mm}{\center\songti\fontsize{16}{16}\textcolor{black}{院\qquad\ \ \ 系：\underline{\makebox[76mm][c]{\kaiti{\school}}}}}
+\SetVerticalCoffin \majorText{104mm}{\center\songti\fontsize{16}{16}\textcolor{black}{本科专业：\underline{\makebox[76mm][c]{\kaiti{\major}}}}}
+\SetVerticalCoffin \advisorText{104mm}{\center\songti\fontsize{16}{16}\textcolor{black}{指导老师：\underline{\makebox[76mm][c]{\kaiti{\advisor}}}}}
+\SetVerticalCoffin \dateText{104mm}{\center\kaiti\fontsize{18}{18}\textcolor{black}{二〇一玖\quad 年\quad 五\quad 月}}
+
+
+% 指定各个Coffin相对位置关系
+\JoinCoffins \result \topBox
+\JoinCoffins \result[\topBox-hc, \topBox-b] \badge[r, b](-27.9mm, -20.6mm)
+\JoinCoffins \result[\topBox-hc, \topBox-b] \pku[l, b](-11.3mm, -20.6mm)
+\JoinCoffins \result[\topBox-hc, \topBox-b] \headingText[hc, b](0mm, -63.8mm)
+\JoinCoffins \result[\headingText-hc, \headingText-b] \titleText[l, t](-73.25mm, -20mm)
+\JoinCoffins \result[\headingText-hc, \headingText-b] \chineseTitleText[l, t](-46.85mm, -18.85mm)
+\JoinCoffins \result[\headingText-hc, \headingText-b] \englishTitleText[l, t](-49.85mm, -34mm)
+\JoinCoffins \result[\headingText-hc, \headingText-b] \nameText[hc, t](0mm, -60mm)
+\JoinCoffins \result[\nameText-hc, \nameText-b] \studentIDText[hc, t](0mm, 0mm)
+\JoinCoffins \result[\studentIDText-hc, \studentIDText-b] \schoolText[hc, t](0mm, 0mm)
+\JoinCoffins \result[\schoolText-hc, \schoolText-b] \majorText[hc, t](0mm, 0mm)
+\JoinCoffins \result[\majorText-hc, \majorText-b] \advisorText[hc, t](0mm, 0mm)
+\JoinCoffins \result[\advisorText-hc, \advisorText-b] \dateText[hc, t](0mm, -20mm)
+
+
+% 输出封面
+\thispagestyle{empty}
+\newgeometry{left=0mm,bottom=0mm, top=0mm, right=0mm}
+\noindent\TypesetCoffin \result
+\restoregeometry
