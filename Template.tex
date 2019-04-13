@@ -104,13 +104,33 @@
 
 
 
+% 封面依赖的宏包
+\input{CoverHead}
+% 评阅表依赖的宏包
+\input{ReviewTableHead}
+
+
 
 \title{}
 \author{}
 \date{}
 \begin{document}
 
+% 封面中需要修改的内容直接在此处更改即可
+\newcommand{\chineseTitle}{中文题目（楷体，二号，加粗）}
+\newcommand{\englishTitle}{英文题目（Times New Roman，三号，加粗）}
+\newcommand{\name}{张三}
+\newcommand{\studentID}{15000xxxxx}
+\newcommand{\school}{信息科学技术学院}
+\newcommand{\major}{电子信息科学与技术}
+\newcommand{\advisor}{李四}
+% 插入封面
+\input{cover}
+\clearpage
 
+% 插入导师评阅表
+\input{ReviewTable}
+\clearpage
 
 
 \linespread{1.5}\selectfont
