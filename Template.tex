@@ -23,9 +23,13 @@
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{amsfonts}
-\usepackage{cite}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
+
+
+
+\usepackage{cite}
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}} %引用在右上角
 
 
 
@@ -37,31 +41,41 @@
 
 
 
-\usepackage{tocloft} %自定义目录，说明中的目录没有按照字面写的设置，这里按字面写的为准
+\usepackage{tocloft} %自定义目录，说明中没有明确规定，和WORD自动生成目录格式一致
 
-\setlength\cftparskip{10pt} %目录项之间垂直距离，不确定，待改
+%“全文目录”四个字的格式
+\renewcommand\cftbeforetoctitleskip{0pt}
+\renewcommand\cftaftertoctitleskip{0pt}
+\renewcommand\cfttoctitlefont{\bfseries\heiti\zihao{2}}
 
-\renewcommand\cftchapfont{\heiti\zihao{2}} %二号，黑体
+\renewcommand\cftchapfont{\heiti\normalsize} %黑体小四
 \renewcommand\cftchapdotsep{\cftdotsep} %有点连到页码，点间距不确定，待改
-\renewcommand\cftchappagefont{\bfseries\songti\zihao{2}}
-%页码的文字用加粗宋体，因为\heiti下英文，数字和标点并没有被加粗，与WORD不同
+\renewcommand\cftchappagefont{\songti\normalsize} %宋体小四页码
+\renewcommand\cftbeforechapskip{0pt}
 
-%1. 第一级 三号宋体/Time new roman、加粗
-\renewcommand\cftsecfont{\bfseries\songti\zihao{3}}
-\renewcommand\cftsecpagefont{\bfseries\songti\zihao{3}}
+%1. 第一级 五号宋体，缩进两个字符，页码一致
+\renewcommand\cftsecfont{\songti\small}
+\renewcommand\cftsecpagefont{\songti\small}
+\renewcommand\cftsecaftersnum{.} %一级目录号后加点
+\renewcommand\cftsecindent{2em}
+\renewcommand\cftbeforesecskip{0pt}
 
-%1.1 第二级 四号，宋体/Time new roman，加粗，页码一致
-\renewcommand\cftsubsecfont{\bfseries\songti\zihao{4}}
-\renewcommand\cftsubsecpagefont{\bfseries\songti\zihao{4}}
+%1.1 第二级 五号宋体，缩进四个字符，页码一致
+\renewcommand\cftsubsecfont{\songti\small}
+\renewcommand\cftsubsecpagefont{\songti\small}
+\renewcommand\cftsubsecindent{4em}
+\renewcommand\cftbeforesubsecskip{0pt}
 
-%1.1.1 第三级 小四，宋体/Time new roman加粗，页码一致
-\renewcommand\cftsubsubsecfont{\bfseries\songti\zihao{-4}}
-\renewcommand\cftsubsubsecpagefont{\bfseries\songti\zihao{-4}}
+%1.1.1 第二级 五号宋体，缩进四个字符，页码一致
+\renewcommand\cftsubsubsecfont{\songti\small}
+\renewcommand\cftsubsubsecpagefont{\songti\small}
+\renewcommand\cftsubsubsecindent{4em}
+\renewcommand\cftbeforesubsubsecskip{0pt}
 
 
 
 \usepackage{titlesec}%自定义章节标题
-\CTEXsetup[format={\center\heiti\zihao{2}},beforeskip=0pt]{chapter}
+\CTEXsetup[format={\bfseries\center\heiti\zihao{2}},beforeskip=0pt]{chapter}
 %第一章  绪论（二号、黑体） beforeskip为上方垂直距离看起来还比说明偏大，待改
 
 \setcounter{tocdepth}{3}
@@ -265,7 +279,7 @@ doc小改动：插入了两个白页，使得连续打印的时候封面和表�
 \section{一级段落名称}
 \subsection{二级段落名称}
 \subsubsection{三级段落名称}
-引用如\cite{PhysRev.47.777}，引用表如表\ref{tab:input_output_r}，引用图如图\ref{fig:sample}．
+引用如\upcite{PhysRev.47.777}，引用表如表\ref{tab:input_output_r}，引用图如图\ref{fig:sample}．
 
 \begin{table}[h]
 \small %内容，（五号，宋体/Time new roman）
