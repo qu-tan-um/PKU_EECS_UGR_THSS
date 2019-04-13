@@ -2,7 +2,12 @@
 
 The project's author is TBC. Based on TBC's code, I added the cover and reviewtable in branch 'cover'.
 
-## In branch 'cover'
+
+## branch 'non-ctex'
+
+The template now is free from ctex. This means we have more control over it. The font names are tailored to Mac OS, so beware of changing them when building on Windows or Linux. From Bochen Tan
+
+## In branch 'cover' (now has been merged to master)
 
 There are five .tex files:
 
