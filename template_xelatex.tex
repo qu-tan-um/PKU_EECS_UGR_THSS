@@ -1,7 +1,15 @@
+% Copyright (c) 2019 Bochen Tan
+% Public domain.
+% SceneryInMirror dealt with cover, review table and statement
+
+
+
+
+
 \documentclass[utf8, a4paper, 12pt]{book}
 \newcommand\clearemptydoublepage{\clearpage{\thispagestyle{empty}\cleardoublepage}}
 \usepackage{pdfpages}
-
+\usepackage{geometry}
 
 
 %字体设置
@@ -98,6 +106,12 @@
 
 
 
+% 封面依赖的宏包
+\input{CoverHead}
+
+% 评阅表依赖的宏包
+\input{ReviewTableHead}
+
 
 
 \title{}
@@ -105,6 +119,38 @@
 \date{}
 \begin{document}
 %\includepdf[pages={1-6}]{Cover&ReviewTable&Statement.pdf}
+
+
+
+% 封面中需要修改的内容直接在此处更改即可
+\newcommand{\chineseTitle}{中文题目（楷体，二号，加粗）}
+\newcommand{\englishTitle}{英文题目（Times New Roman，三号，加粗）}
+\newcommand{\name}{张三}
+\newcommand{\studentID}{15000xxxxx}
+\newcommand{\school}{信息科学技术学院}
+\newcommand{\major}{电子信息科学与技术}
+\newcommand{\advisor}{李四}
+
+% 插入封面
+\input{Cover}
+\clearemptydoublepage
+
+% 插入导师评阅表
+\input{ReviewTable}
+\clearemptydoublepage
+
+
+
+\newgeometry{left=3.1cm,right=3.1cm,top=2.54cm,bottom=2.54cm}
+\chapter*{\bfseries \songti 版权声明}
+\songti\fontsize{12pt}{24pt}\selectfont
+\setcounter{page}{1}
+% 本页不计页码
+\thispagestyle{empty}
+% 本页无页眉和页脚
+\quad\quad 任何收存和保管本论文各种版本的单位和个人，未经本论文作者同意，不得将本论文转借他人，亦不得随意复制、抄
+\restoregeometry
+\clearemptydoublepage
 
 
 
