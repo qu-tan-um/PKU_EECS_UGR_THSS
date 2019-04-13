@@ -26,12 +26,8 @@ There are five .tex files:
 
 ## Cover
 
-(http://github.com/SceneryInMirror/PKU_EECS_UGR_THSS/raw/cover/images/cover.png)
-
 ![image](https://github.com/SceneryInMirror/PKU_EECS_UGR_THSS/blob/cover/images/cover.png)
 
 ## ReviewTable
-
-![img](http://github.com/SceneryInMirror/PKU_EECS_UGR_THSS/raw/cover/images/reviewtable.png)
 
 ![image](https://github.com/SceneryInMirror/PKU_EECS_UGR_THSS/blob/cover/images/reviewtable.png)
