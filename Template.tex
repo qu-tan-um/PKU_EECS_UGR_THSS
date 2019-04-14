@@ -38,6 +38,7 @@
 \usepackage[font=small,labelsep=space]{caption} %五号，宋体/Time new roman
 \renewcommand{\thetable}{\arabic{table}} %表格和图片编号不分章节，直接1，2，3 ...
 \renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} %公式标签 章.公式（均为阿拉伯数字）
 
 
 
@@ -180,7 +181,7 @@ doc小改动：插入了两个白页，使得连续打印的时候封面和表�
 有警告$\backslash$ headheight is too small，fancyhdr的上距离有点小，似乎问题不大
 
 \bigskip
-\noindent{\bfseries\songti 关键词: } 
+\noindent{\bfseries\songti 关键词: }
 
 
 
@@ -188,18 +189,18 @@ doc小改动：插入了两个白页，使得连续打印的时候封面和表�
 \fancypagestyle{plain} %因为latex默认每章第一页是plain所以需要重置一下plain和说明统一
 {
 	\fancyhf{} %清空
-	
+
 	\fancyhead[RE,RO]{摘要}
 	%偶数页右页眉，奇数页右页眉均为“摘要”，及章名\leftmark
 
 	\fancyhead[LE,LO]{北京大学本科生毕业论文}
 	%偶数页左页眉，奇数页左页眉均为“北京大学本科生毕业论文”
-	
+
 	\fancyfoot[CO,CE]{~\thepage~}
 	%偶数页和奇数页中页脚为页码，从对称考虑，因为每页在说明中都是一样的，不分奇偶
-	
+
 	\renewcommand{\headrulewidth}{0.7pt} %页眉线宽度，可调，不太清楚说明中是多少，待改
-	
+
 	\renewcommand{\footrulewidth}{0pt} %页脚线宽度为0，既没有
 }
 
@@ -227,7 +228,7 @@ doc小改动：插入了两个白页，使得连续打印的时候封面和表�
 {\bfseries Key Words: }
 
 
-	
+
 \addcontentsline{toc}{chapter}{\bfseries Abstract} %Abstract加粗
 \fancypagestyle{plain}
 {
@@ -375,7 +376,7 @@ doc小改动：插入了两个白页，使得连续打印的时候封面和表�
 
 
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{ref}
 这是参考“参考文献”，主要用来看引用的顺序，请手动些参考文献或自行写程序，最终编译请删除
 \clearpage
