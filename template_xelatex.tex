@@ -19,7 +19,7 @@
 \setmainfont{TimesNewRomanPSMT}
 
 %针对Mac OS的字体名称，其他系统请自行寻找宋体、黑体、楷体
-\setCJKfamilyfont{songti}[BoldFont=STSongti-SC-Bold, Mapping={fullwidth-stop}]{STSongti-SC-Regular} 
+\setCJKfamilyfont{songti}[BoldFont=STSongti-SC-Bold, Mapping={fullwidth-stop}]{STSongti-SC-Regular}
 \newcommand{\songti}{\CJKfamily{songti}}
 \setCJKmainfont[BoldFont=STSongti-SC-Bold, Mapping={fullwidth-stop}]{STSongti-SC-Regular}
 
@@ -58,6 +58,7 @@
 \captionsetup[table]{name=表}
 \renewcommand{\thetable}{\arabic{table}} %表格和图片编号不分章节，直接1，2，3 ...
 \renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
 
 
 
@@ -161,7 +162,7 @@
 \songti\fontsize{12pt}{18pt}\selectfont %小四号，宋体/Time new roman，1.5倍行距
 
 \bigskip
-\noindent{\bfseries\songti 关键词: } 
+\noindent{\bfseries\songti 关键词: }
 
 
 
@@ -169,18 +170,18 @@
 \fancypagestyle{plain} %因为latex默认每章第一页是plain所以需要重置一下plain和说明统一
 {
 	\fancyhf{} %清空
-	
+
 	\fancyhead[LE,RO]{摘要}
 	%偶数页左页眉，奇数页右页眉均为“摘要”，及章名\leftmark
 
 	\fancyhead[RE,LO]{北京大学本科生毕业论文}
 	%偶数页右页眉，奇数页左页眉均为“北京大学本科生毕业论文”
-	
+
 	\fancyfoot[CO,CE]{~\thepage~}
 	%偶数页和奇数页中页脚为页码，从对称考虑，因为每页在说明中都是一样的，不分奇偶
-	
+
 	\renewcommand{\headrulewidth}{0.7pt} %页眉线宽度，可调，不太清楚说明中是多少，待改
-	
+
 	\renewcommand{\footrulewidth}{0pt} %页脚线宽度为0，既没有
 }
 
@@ -204,7 +205,7 @@
 {\bfseries Key Words: }
 
 
-	
+
 \addcontentsline{toc}{chapter}{\bfseries Abstract} %Abstract加粗
 \fancypagestyle{plain}
 {
@@ -369,7 +370,7 @@
 
 
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{ref}
 这是参考“参考文献”，主要用来看引用的顺序，请手动些参考文献或自行写程序，最终编译请删除
 \clearemptydoublepage
