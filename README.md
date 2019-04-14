@@ -1,10 +1,10 @@
 # LaTeX Template for Undergraduate Thesis at School of EECS, Peking University
 
-The initial author of the repository is Bochen Tan. SceneryInMirror has made invaluable contributions.
+The initial author of the repository is Bochen Tan. [SceneryInMirror](https://github.com/SceneryInMirror/) has made invaluable contributions.
 
 I made this Latex template as 'green' as possible, meaning that it does not depend on other things than Latex.
 
-There are mainly two branches: 'master' which follows the .doc file quite rigidly and depend on ctex package 'non-ctex' which is free from ctex. 'non-ctex' contains some variations from the .doc file, but definitely no direct violations. (There are some details that is not explicitly regulated in the .doc file, so we can made up our own minds.)
+There are mainly two branches: 'master' which follows the .doc file quite rigidly and depend on ctex package 'non-ctex' which is free from ctex. 'non-ctex' contains some variations from the .doc file, but definitely no direct violations. (There are some details that is not explicitly regulated in the .doc file, so we can make up our own minds.)
 
 Beware to change the font names (songti, heiti, kaiti, and Times New Roman) according to your operating system. The font names in 'non-ctex' is tailored to my Mac OS.
 
