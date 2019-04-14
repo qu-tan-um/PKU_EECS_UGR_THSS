@@ -9,7 +9,7 @@ There are mainly two branches: 'master' which follows the .doc file quite rigidl
 Beware to change the font names (songti, heiti, kaiti, and Times New Roman) according to your operating system. The font names in 'non-ctex' is tailored to my Mac OS.
 
 
-##'cover' has been merged to 'master'
+## 'cover' has been merged to 'master'
 
 The project's author is TBC. Based on TBC's code, SceneryInMirror added the cover and reviewtable in branch 'cover'.
 
