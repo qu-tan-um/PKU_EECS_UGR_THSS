@@ -56,8 +56,8 @@
 \captionsetup{font=pkueecs, labelsep=space}
 \captionsetup[figure]{name=图}
 \captionsetup[table]{name=表}
-\renewcommand{\thetable}{\arabic{table}} %表格和图片编号不分章节，直接1，2，3 ...
-\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
 
 
