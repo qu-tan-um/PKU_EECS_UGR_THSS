@@ -8,6 +8,7 @@ There are mainly two branches: 'master' which follows the .doc file quite rigidl
 
 Beware to change the font names (songti, heiti, kaiti, and Times New Roman) according to your operating system. The font names in 'non-ctex' is tailored to my Mac OS.
 
+## 'overleaf' branch is for overleaf building
 
 ## 'cover' has been merged to 'master'
 
