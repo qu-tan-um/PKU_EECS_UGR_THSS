@@ -27,7 +27,7 @@ There are five .tex files:
 
 'ReviewTable.tex' designs the reviewtable of this template.
 
-'CoverHead.tex' and 'ReviewTableHead.tex' are head files for cover and reviewtable. They contain all packages needed for these two parts.
+'CoverHead.tex' and 'ReviewTableHead.tex' are head files for cover and reviewtable. They contain all packages needed for these two parts. **please change the name of kaiti to the name of kaiti in your operating system**
 
 **There is no need to edit the last four .tex files. Everything you want to write is in 'Template.tex', including the words in the cover.**
 
