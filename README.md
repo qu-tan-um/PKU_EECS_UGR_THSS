@@ -8,6 +8,9 @@ There are mainly two branches: 'master' which follows the .doc file quite rigidl
 
 Beware to change the font names (songti, heiti, kaiti, and Times New Roman) according to your operating system. The font names in 'non-ctex' is tailored to my Mac OS.
 
+## 'overleaf' branch is for overleaf building
+
+To use the template in Overleaf, just download all the files in this branch and upload it to Overleaf. Set the main tex file to template.tex and it should be ready to compile. This branch still bases on ctex. Only font names are changed comparing to master branch.
 
 ## 'cover' has been merged to 'master'
 
