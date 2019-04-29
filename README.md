@@ -12,6 +12,8 @@ Beware to change the font names (songti, heiti, kaiti, and Times New Roman) acco
 
 To use the template in Overleaf, just download all the files in this branch and upload it to Overleaf. Set the main tex file to template.tex and it should be ready to compile. This branch still bases on ctex. Only font names are changed comparing to master branch.
 
+An older but stable version has been made available on Overleaf. Please search for [PKU EECS UGR THSS ctex](https://www.overleaf.com/latex/templates/pku-eecs-ugr-thss-ctex/mzhftgdsbgnw).
+
 ## 'cover' has been merged to 'master'
 
 The project's author is TBC. Based on TBC's code, SceneryInMirror added the cover and reviewtable in branch 'cover'.
