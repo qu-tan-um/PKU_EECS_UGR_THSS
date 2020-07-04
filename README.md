@@ -40,8 +40,8 @@ There are five .tex files:
 
 ## Cover
 
-![image](https://github.com/SceneryInMirror/PKU_EECS_UGR_THSS/blob/cover/images/cover.png)
+![image](https://github.com/tbcdebug/PKU_EECS_UGR_THSS/blob/master/images/cover.png)
 
 ## ReviewTable
 
-![image](https://github.com/SceneryInMirror/PKU_EECS_UGR_THSS/blob/cover/images/reviewtable.png)
+![image](https://github.com/tbcdebug/PKU_EECS_UGR_THSS/blob/master/images/reviewtable.png)
